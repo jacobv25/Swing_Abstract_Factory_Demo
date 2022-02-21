@@ -6,7 +6,11 @@ public class ImageLoader {
 
     private String path;
 
-    public ImageLoader(String path) {
+//    public ImageLoader(String path) {
+//        this.path = path;
+//    }
+
+    public void setPath(String path) {
         this.path = path;
     }
 

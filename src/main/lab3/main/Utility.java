@@ -11,8 +11,9 @@ import java.awt.event.ActionListener;
 public class Utility {
 
     //CONSTANTS
-    public static final String PINK_CHARACTER_PATH = "/pink-character.png";
+    public static final String PINK_CHARACTER_PATH = "/pink-character-2.png";
     public static final String MAN_WALKING_PATH = "/man-walking-2.gif";
+    public static final String CHARACTER_1_PATH = "/character-2.png";
     //END OF CONSTANTS
 
     private static Utility instance = new Utility();

@@ -1,5 +1,6 @@
 package main.lab3.view;
 
+import main.lab3.main.DifficultyMode;
 import main.lab3.main.ImageLoader;
 import main.lab3.main.Utility;
 
@@ -14,6 +15,9 @@ public class CustomFrame extends JFrame {
     private JPanel imagePanel;
     private JPanel selectionPanelContainer;
     private JPanel characterSelectionPanel;
+    private ImageLoader imageLoader;
+    private ImageIcon image;
+    private JLabel imageContainerLabel;
 
     public CustomFrame() {
         setSize(1000,800);
@@ -24,11 +28,8 @@ public class CustomFrame extends JFrame {
         modeButtonPanel = new ModeButtonPanel(this);
         imagePanel = new JPanel();
 
-        //load image
-        ImageLoader imageLoader = new ImageLoader(Utility.MAN_WALKING_PATH);
-        ImageIcon image = imageLoader.loadImage();
-        JLabel label = new JLabel(image);
-        imagePanel.add(label);
+        imageLoader = new ImageLoader();
+        imageContainerLabel = new JLabel();
 
         infoPanel.setVisible(true);
         modeButtonPanel.setVisible(true);
@@ -44,14 +45,28 @@ public class CustomFrame extends JFrame {
     }
 
     public void beginnerButtonPushed() {
-        System.out.println("beginner mode");
+        System.out.println("beginner mode ON");
+        loadImageOntoPanel(Utility.CHARACTER_1_PATH);
     }
 
     public void intermediateButtonPushed() {
-        System.out.println("intermediate mode");
+        System.out.println("intermediate mode ON");
+        loadImageOntoPanel(Utility.PINK_CHARACTER_PATH);
     }
 
     public void advanceButtonPushed() {
-        System.out.println("advance mode");
+        System.out.println("advance mode ON");
+        loadImageOntoPanel(Utility.MAN_WALKING_PATH);
+    }
+
+    private void loadImageOntoPanel(String path) {
+        imageLoader.setPath(path);
+        image = imageLoader.loadImage();
+        imageContainerLabel.setIcon(image);
+        int size = imagePanel.getComponents().length;
+        if(size != 0) {
+            imagePanel.remove(size-1);
+        }
+        imagePanel.add(imageContainerLabel);
     }
 }
