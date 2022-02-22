@@ -14,4 +14,7 @@ public class ImagePanel extends JPanel {
         add(label);
         setVisible(true);
     }
+
+//    public ImagePanel() {
+//    }
 }

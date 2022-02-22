@@ -1,6 +1,7 @@
 package main.lab3.SelectionPanel;
 
 import main.lab3.main.DifficultyMode;
+import main.lab3.view.ImagePanel;
 
 import javax.swing.*;
 
@@ -11,6 +12,12 @@ public class CharacterSelectionPanel extends JPanel implements SelectionPanel_IF
     public CharacterSelectionPanel(DifficultyMode mode) {
         this.mode = mode;
     }
+
+//    public CharacterSelectionPanel(ImageIcon imageIcon, DifficultyMode mode) {
+//        super(imageIcon);
+//        this.mode = mode;
+//    }
+
 
     @Override
     public void paint() {
