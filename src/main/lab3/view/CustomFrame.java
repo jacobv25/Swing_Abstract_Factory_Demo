@@ -45,12 +45,12 @@ public class CustomFrame extends JFrame {
 
     public void beginnerButtonPushed() {
         System.out.println("beginner mode ON");
-        loadImageOntoPanel(Utility.CHARACTER_1_PATH);
+        loadImageOntoPanel(Utility.WOODCUTTER_PATH);
     }
 
     public void intermediateButtonPushed() {
         System.out.println("intermediate mode ON");
-        loadImageOntoPanel(Utility.PINK_CHARACTER_PATH);
+        loadImageOntoPanel(Utility.GRAVE_ROBBER_PATH);
     }
 
     public void advanceButtonPushed() {

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Lab3 Abstract Factory Demo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Lab3_Abstract_Factory_Demo_jar</output-path>
+    <root id="archive" name="Lab3 Abstract Factory Demo.jar">
+      <element id="module-output" name="Lab3 Abstract Factory Demo" />
+    </root>
+  </artifact>
+</component>
