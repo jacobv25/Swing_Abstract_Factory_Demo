@@ -1,7 +1,6 @@
 package main.lab3.main;
 
-import main.lab3.Factory.SelectionPanelFactory;
-import main.lab3.Factory.SelectionPanelFactoryIF;
+import main.lab3.Factory.*;
 //import main.lab3.events.DifficultyModeActionListener;
 
 import javax.swing.plaf.basic.BasicOptionPaneUI;
@@ -11,12 +10,13 @@ import java.awt.event.ActionListener;
 public class Utility {
 
     //CONSTANTS
-    public static final String PINK_CHARACTER_PATH = "/pink-character-2.png";
-    public static final String MAN_WALKING_PATH = "/man-walking-2.gif";
-    public static final String CHARACTER_1_PATH = "/character-2.png";
-    public static final String WOODCUTTER_PATH = "/woodcutter-4.gif";
-    public static final String GRAVE_ROBBER_PATH = "/grave-robber.gif";
-    public static final String STEAM_LADY_PATH = "/steam-lady.gif";
+        public static final String PINK_CHARACTER_PATH = "/pink-character-2.png";
+        public static final String MAN_WALKING_PATH = "/man-walking-2.gif";
+        public static final String CHARACTER_1_PATH = "/character-2.png";
+        public static final String WOODCUTTER_PATH = "/woodcutter-4.gif";
+        public static final String GRAVE_ROBBER_PATH = "/grave-robber.gif";
+        public static final String STEAM_LADY_PATH = "/steam-lady.gif";
+
     //END OF CONSTANTS
 
     private static Utility instance = new Utility();
@@ -27,8 +27,15 @@ public class Utility {
         return instance;
     }
 
-    public SelectionPanelFactoryIF getSelectionPanelFactory() {
-        return  new SelectionPanelFactory();
+    public AbstractSelectionPanelFactoryIF createSelectionPanelFactory(PanelType panelType) {
+        switch (panelType) {
+            case CHARACTER_SELECTION :
+                return new CharacterSelectionPanelFactory();
+            case WEAPON_SELECTION :
+                return new WeaponSelectionPanelFactory();
+            default:
+                return null;
+        }
     }
 
     public DifficultyMode InputToMode(String input) {

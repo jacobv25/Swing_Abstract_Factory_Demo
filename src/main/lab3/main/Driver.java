@@ -29,8 +29,8 @@ public class Driver {
             //convert input to difficulty mode
             DifficultyMode mode = Utility.getInstance().InputToMode(input);
 
-            SelectionPanel_IF characterSelectionPanel = Utility.getInstance().getSelectionPanelFactory().createCharacterSelectionPanel(mode);
-            SelectionPanel_IF weaponSelectionPanel = Utility.getInstance().getSelectionPanelFactory().createWeaponSelectionPanel(mode);
+            SelectionPanel_IF characterSelectionPanel = Utility.getInstance().createSelectionPanelFactory(PanelType.CHARACTER_SELECTION).createSelectionPanel(mode);
+            SelectionPanel_IF weaponSelectionPanel = Utility.getInstance().createSelectionPanelFactory(PanelType.WEAPON_SELECTION).createSelectionPanel(mode);
 
             characterSelectionPanel.paint();
             weaponSelectionPanel.paint();
