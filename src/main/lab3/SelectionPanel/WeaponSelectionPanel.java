@@ -2,8 +2,7 @@ package main.lab3.SelectionPanel;
 
 import main.lab3.main.DifficultyMode;
 
-public class WeaponSelectionPanel implements SelectionPanel_IF {
-
+public class WeaponSelectionPanel implements SelectionPanel_IF{
     private DifficultyMode mode;
 
     public WeaponSelectionPanel(DifficultyMode mode) {
