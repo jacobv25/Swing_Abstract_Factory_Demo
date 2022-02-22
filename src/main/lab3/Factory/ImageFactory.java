@@ -1,8 +1,8 @@
-package main.lab3.main;
+package main.lab3.Factory;
 
 import javax.swing.*;
 
-public class ImageLoader {
+public class ImageFactory {
 
     private String path;
 

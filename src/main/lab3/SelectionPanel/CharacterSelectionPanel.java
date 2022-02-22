@@ -4,7 +4,7 @@ import main.lab3.main.DifficultyMode;
 
 import javax.swing.*;
 
-public class CharacterSelectionPanel extends JPanel implements SelectionPanelF {
+public class CharacterSelectionPanel extends JPanel implements SelectionPanel_IF {
 
     private DifficultyMode mode;
 

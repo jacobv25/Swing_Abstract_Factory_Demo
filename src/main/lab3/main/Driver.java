@@ -2,7 +2,7 @@ package main.lab3.main;
 
 import main.lab3.Factory.SelectionPanelFactory;
 import main.lab3.Factory.SelectionPanelFactoryIF;
-import main.lab3.SelectionPanel.SelectionPanelF;
+import main.lab3.SelectionPanel.SelectionPanel_IF;
 
 import java.util.Scanner;
 
@@ -29,11 +29,11 @@ public class Driver {
             //convert input to difficulty mode
             DifficultyMode mode = Utility.getInstance().InputToMode(input);
 
-            SelectionPanelF csp = Utility.getInstance().getSelectionPanelFactory().createCharacterSelectionPanel(mode);
-            SelectionPanelF wsp = Utility.getInstance().getSelectionPanelFactory().createWeaponSelectionPanel(mode);
+            SelectionPanel_IF characterSelectionPanel = Utility.getInstance().getSelectionPanelFactory().createCharacterSelectionPanel(mode);
+            SelectionPanel_IF weaponSelectionPanel = Utility.getInstance().getSelectionPanelFactory().createWeaponSelectionPanel(mode);
 
-            csp.paint();
-            wsp.paint();
+            characterSelectionPanel.paint();
+            weaponSelectionPanel.paint();
 
         }while(true);
     }

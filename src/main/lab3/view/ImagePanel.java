@@ -1,7 +1,5 @@
 package main.lab3.view;
 
-import main.lab3.main.ImageLoader;
-
 import javax.swing.*;
 
 public class ImagePanel extends JPanel {

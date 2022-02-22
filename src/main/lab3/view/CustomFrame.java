@@ -1,7 +1,6 @@
 package main.lab3.view;
 
-import main.lab3.main.DifficultyMode;
-import main.lab3.main.ImageLoader;
+import main.lab3.Factory.ImageFactory;
 import main.lab3.main.Utility;
 
 import javax.swing.*;
@@ -15,7 +14,7 @@ public class CustomFrame extends JFrame {
     private JPanel imagePanel;
     private JPanel selectionPanelContainer;
     private JPanel characterSelectionPanel;
-    private ImageLoader imageLoader;
+    private ImageFactory imageFactory;
     private ImageIcon image;
     private JLabel imageContainerLabel;
 
@@ -28,7 +27,7 @@ public class CustomFrame extends JFrame {
         modeButtonPanel = new ModeButtonPanel(this);
         imagePanel = new JPanel();
 
-        imageLoader = new ImageLoader();
+        imageFactory = new ImageFactory();
         imageContainerLabel = new JLabel();
 
         infoPanel.setVisible(true);
@@ -60,8 +59,8 @@ public class CustomFrame extends JFrame {
     }
 
     private void loadImageOntoPanel(String path) {
-        imageLoader.setPath(path);
-        image = imageLoader.loadImage();
+        imageFactory.setPath(path);
+        image = imageFactory.loadImage();
         imageContainerLabel.setIcon(image);
         int size = imagePanel.getComponents().length;
         if(size != 0) {
