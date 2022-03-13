@@ -1,7 +1,7 @@
 package main.lab3.events;
 
-import main.lab3.main.DifficultyMode;
-import main.lab3.view.CustomFrame;
+import main.lab3.mvc.controller.DifficultyMode;
+import main.lab3.mvc.controller.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,24 +9,24 @@ import java.awt.event.ActionListener;
 public class DifficultyModeActionListener implements ActionListener {
 
     private DifficultyMode discriminator;
-    private CustomFrame customFrame;
+    private Controller controller;
 
-    public DifficultyModeActionListener(DifficultyMode discriminator, CustomFrame customFrame) {
+    public DifficultyModeActionListener(DifficultyMode discriminator, Controller controller) {
         this.discriminator = discriminator;
-        this.customFrame = customFrame;
+        this.controller = controller;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (discriminator) {
             case BEGINNER:
-                    customFrame.beginnerButtonPushed();
+                controller.beginnerButtonPushed();
                     break;
             case INTERMEDIATE:
-                    customFrame.intermediateButtonPushed();
+                controller.intermediateButtonPushed();
                     break;
             case ADVANCE:
-                    customFrame.advanceButtonPushed();
+                controller.advanceButtonPushed();
                     break;
         }
     }

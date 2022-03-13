@@ -6,9 +6,6 @@ public class ImageFactory {
 
     private String path;
 
-//    public ImageLoader(String path) {
-//        this.path = path;
-//    }
 
     public void setPath(String path) {
         this.path = path;

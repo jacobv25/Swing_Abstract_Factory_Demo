@@ -1,8 +1,14 @@
 package main.lab3.SelectionPanel;
 
-import main.lab3.main.DifficultyMode;
+import main.lab3.mvc.controller.DifficultyMode;
+import main.lab3.mvc.model.ImagePanel;
 
-public class WeaponSelectionPanel implements SelectionPanel_IF{
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class WeaponSelectionPanel extends JPanel implements SelectionPanel_IF{
+
     private DifficultyMode mode;
 
     public WeaponSelectionPanel(DifficultyMode mode) {
@@ -11,22 +17,20 @@ public class WeaponSelectionPanel implements SelectionPanel_IF{
 
     @Override
     public void paint() {
-        switch (mode) {
-            case BEGINNER -> paintBeginner();
-            case INTERMEDIATE -> paintIntermediate();
-            case ADVANCE -> paintAdvance();
-        }
+        this.setVisible(true);
     }
 
-    public void paintBeginner() {
-        System.out.println("painting beginner weapon selection model");
+    @Override
+    public void erase() {
+        this.setVisible(false);
     }
 
-    public void paintIntermediate() {
-        System.out.println("painting intermediate weapon selection model");
+    @Override
+    public void addPanel(ImagePanel imagePanel) {
+        add(imagePanel);
     }
 
-    public void paintAdvance() {
-        System.out.println("painting advance weapon selection model");
+    public DifficultyMode getMode() {
+        return mode;
     }
 }

@@ -1,9 +1,12 @@
 package main.lab3.SelectionPanel;
 
-import main.lab3.main.DifficultyMode;
-import main.lab3.view.ImagePanel;
+import main.lab3.mvc.controller.DifficultyMode;
+import main.lab3.mvc.controller.Utility;
+import main.lab3.mvc.model.ImagePanel;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CharacterSelectionPanel extends JPanel implements SelectionPanel_IF {
 
@@ -13,31 +16,23 @@ public class CharacterSelectionPanel extends JPanel implements SelectionPanel_IF
         this.mode = mode;
     }
 
-//    public CharacterSelectionPanel(ImageIcon imageIcon, DifficultyMode mode) {
-//        super(imageIcon);
-//        this.mode = mode;
-//    }
-
-
     @Override
     public void paint() {
-        switch (mode) {
-            case BEGINNER -> paintBeginner();
-            case INTERMEDIATE -> paintIntermediate();
-            case ADVANCE -> paintAdvance();
-        }
+        this.setVisible(true);
     }
 
-    public void paintBeginner() {
-        System.out.println("painting beginner character selection model");
-
+    @Override
+    public void erase() {
+        this.setVisible(false);
     }
 
-    public void paintIntermediate() {
-        System.out.println("painting intermediate character selection model");
+    @Override
+    public void addPanel(ImagePanel imagePanel) {
+        add(imagePanel);
     }
 
-    public void paintAdvance() {
-        System.out.println("painting advance weapon character model");
+    public DifficultyMode getMode() {
+        return mode;
     }
+
 }
